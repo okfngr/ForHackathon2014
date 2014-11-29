@@ -11,28 +11,28 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 
-public class Culture extends Activity {
+public class CultureType extends Activity {
 
-    private ListView cultureListView;
+    private ListView typeListView;
     private String[] types;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_culture);
+        setContentView(R.layout.activity_culture_type);
 
         types = new String[]{"lalal1", "lalal2"};
 
-        CalendarLVA adapter = new CalendarLVA(Culture.this, types);
-        cultureListView = (ListView) findViewById(R.id.cultureAllTypes);
-        cultureListView.setAdapter(adapter);
-        cultureListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        CalendarLVA adapter = new CalendarLVA(CultureType.this, types);
+        typeListView = (ListView) findViewById(R.id.cultureType);
+        typeListView.setAdapter(adapter);
+        typeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
 
-                Intent intent = new Intent(Culture.this, CultureType.class);
-                Culture.this.startActivity(intent);
+                Intent intent = new Intent(CultureType.this, CultureItem.class);
+                CultureType.this.startActivity(intent);
 
 
             }
@@ -43,7 +43,7 @@ public class Culture extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.culture, menu);
+        getMenuInflater().inflate(R.menu.culture_type, menu);
         return true;
     }
 

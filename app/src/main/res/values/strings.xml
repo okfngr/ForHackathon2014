@@ -16,5 +16,7 @@
     <string name="calendarWhere">Where</string>
     <string name="calendarTime">At</string>
     <string name="calendarMore">More</string>
+    <string name="title_activity_culture_item">CultureItem</string>
+    <string name="title_activity_culture_type">CultureType</string>
 
 </resources>

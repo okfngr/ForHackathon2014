@@ -48,6 +48,14 @@
             android:name=".Event"
             android:label="@string/title_activity_event" >
         </activity>
+        <activity
+            android:name=".CultureItem"
+            android:label="@string/title_activity_culture_item" >
+        </activity>
+        <activity
+            android:name=".CultureType"
+            android:label="@string/title_activity_culture_type" >
+        </activity>
     </application>
 
 </manifest>
