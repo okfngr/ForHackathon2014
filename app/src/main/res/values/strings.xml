@@ -10,5 +10,7 @@
     <string name="title_activity_culture">Culture</string>
     <string name="title_activity_gas_station">GasStation</string>
     <string name="title_activity_about">About</string>
+    <string name="title_activity_events_of_day">EventsOfDay</string>
+    <string name="title_activity_event">Event</string>
 
 </resources>

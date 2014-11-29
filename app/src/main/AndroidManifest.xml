@@ -40,6 +40,14 @@
             android:name=".About"
             android:label="@string/title_activity_about" >
         </activity>
+        <activity
+            android:name=".EventsOfDay"
+            android:label="@string/title_activity_events_of_day" >
+        </activity>
+        <activity
+            android:name=".Event"
+            android:label="@string/title_activity_event" >
+        </activity>
     </application>
 
 </manifest>

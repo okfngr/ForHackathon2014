@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="0,1">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="lalalalal"
+            android:layout_gravity="center_vertical"
+            android:textSize="20dp"
+            android:layout_column="0" />
+
+
+    </TableRow>
+
+    <!-- Line -->
+    <View
+        android:layout_height="0.5dip"
+        android:background="#FFFFFF" />
+
+</TableLayout>
