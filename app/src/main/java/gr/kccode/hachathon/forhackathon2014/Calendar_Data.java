@@ -21,6 +21,10 @@ public class Calendar_Data extends BasicData {
 
     }
 
+    public Calendar_Data() {
+
+    }
+
     public int getYear() {
         return year;
     }

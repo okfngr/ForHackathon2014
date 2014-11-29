@@ -10,8 +10,12 @@ public class BasicData {
     private LatLng point;
     private String label;
 
-    public BasicData(){};
-    public BasicData(int ID, LatLng point, String Label){
+    public BasicData() {
+    }
+
+    ;
+
+    public BasicData(int ID, LatLng point, String Label) {
         this.setID(ID);
         this.setPoint(point);
         this.setLabel(Label);
@@ -39,5 +43,21 @@ public class BasicData {
 
     public void setLabel(String label) {
         this.label = label;
+    }
+
+    public double getX() {
+        return point.longitude;
+    }
+
+    public double getY() {
+        return point.latitude;
+    }
+
+
+    public void setX(double X) {
+        this.point=new LatLng(X,this.getY());
+    }
+    public void setY(double Y) {
+        this.point=new LatLng(this.getX(),Y);
     }
 }
