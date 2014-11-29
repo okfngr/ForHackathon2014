@@ -21,6 +21,6 @@
         android:layout_below="@+id/grid_item_image"
         android:typeface="serif"
         android:textColor="@color/menuOptions"
-        android:textSize="17sp" />
+        android:textSize="18sp" />
 
 </RelativeLayout>
