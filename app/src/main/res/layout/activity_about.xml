@@ -2,15 +2,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="gr.kccode.hachathon.forhackathon2014.About">
+    android:background="@color/menu"
+    android:alpha="0.8"
+    tools:context="gr.kccode.hachathon.forhackathon2014.CultureItem">
 
-    <TextView
-        android:text="@string/title_activity_about"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="50dp"
+                android:typeface="serif"
+                android:text="@string/app_name"
+                android:textColor="@color/menuOptions"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:id="@+id/about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/menuOptions"
+                android:paddingBottom="50dp"
+                android:text="@string/about"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:typeface="serif"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/developers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/menuOptions"
+                android:paddingBottom="50dp"
+                android:text="@string/developers"
+                android:typeface="serif"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:id="@+id/contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="50dp"
+                android:typeface="serif"
+                android:text="@string/contact"
+                android:textColor="@color/menuOptions"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="50dp"
+                android:typeface="serif"
+                android:text="@string/mail"
+                android:textColor="@color/menuOptions"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </RelativeLayout>

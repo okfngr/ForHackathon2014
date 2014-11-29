@@ -28,4 +28,13 @@
     <string name="closer_wifi">Closer Wifi: </string>
     <string name="closer_parking">Closer Parking: </string>
     <string name="closer_gas_station">Closer Gas Station: </string>
+    <string name="about">This app designed for the Hackathon Event 2014. Shows the wifi, parking and gas-station spots in map.
+        Also, there is a calendar which contains all the events that take place in Thessaloniki per day. And finally, describes all
+        the places for cultural events such as theater performances, cinema, museums etc.
+    </string>
+    <string name="developers"> The developer team consists of Paniskaki Kyriaki and Papazoglou Christos-Panagiotis, students
+        at Informatics School of Aristotle University of Thessaloniki.
+    </string>
+    <string name="mail">kiki_paniskaki@hotmail.com  papazockp@gmail.com</string>
+    <string name="contact">Contact</string>
 </resources>
