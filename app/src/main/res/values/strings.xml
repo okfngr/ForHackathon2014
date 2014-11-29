@@ -12,10 +12,10 @@
     <string name="title_activity_about">About</string>
     <string name="title_activity_events_of_day">EventsOfDay</string>
     <string name="title_activity_event">Event</string>
-    <string name="calendarWhat">What</string>
-    <string name="calendarWhere">Where</string>
-    <string name="calendarTime">At</string>
-    <string name="calendarMore">More</string>
+    <string name="calendarWhat">\u2022 What:</string>
+    <string name="calendarWhere">\u2022 Where:</string>
+    <string name="calendarTime">\u2022 At:</string>
+    <string name="calendarMore">\u2022 More:</string>
     <string name="title_activity_culture_item">CultureItem</string>
     <string name="title_activity_culture_type">CultureType</string>
     <string name="menu1">Wifi</string>

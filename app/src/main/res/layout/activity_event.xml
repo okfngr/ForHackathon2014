@@ -1,91 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/menu"
+    android:alpha="0.8"
+    tools:context="gr.kccode.hachathon.forhackathon2014.CultureItem">
 
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:stretchColumns="0,1">
+        android:layout_height="match_parent">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:paddingTop="10dp">
-            <ImageView
-                android:layout_height="50dp"
-                android:layout_width="50dp"
-                android:paddingRight="10dp"
-                android:background="@drawable/pin"/>
+            android:orientation="vertical">
+
+
             <TextView
                 android:id="@+id/what"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:text="@string/calendarWhat"
-                android:layout_gravity="center_vertical"
-                android:textSize="20dp"
-                android:layout_column="0" />
-        </TableRow>
-        <TableRow
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center">
-            <ImageView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:paddingRight="10dp"
-                android:background="@drawable/pin"/>
+                android:layout_gravity="center"
+                android:paddingBottom="50dp"
+                android:typeface="serif"
+                android:textColor="@color/menuOptions"
+                android:textSize="30sp" />
+
+
             <TextView
                 android:id="@+id/where"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:text="@string/calendarWhere"
-                android:layout_gravity="center_vertical"
-                android:textSize="20dp"
-                android:layout_column="0" />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="10dp"
-            android:layout_gravity="center">
-            <ImageView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:paddingRight="10dp"
-                android:background="@drawable/pin"/>
+                android:layout_gravity="center"
+                android:textColor="@color/menuOptions"
+                android:paddingBottom="50dp"
+                android:typeface="serif"
+                android:textSize="30sp" />
+
+
             <TextView
                 android:id="@+id/at"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:text="@string/calendarTime"
-                android:layout_gravity="center_vertical"
-                android:textSize="20dp"
-                android:layout_column="0" />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="10dp"
-            android:layout_gravity="center">
-            <ImageView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:paddingRight="10dp"
-                android:background="@drawable/pin"/>
+                android:layout_gravity="center"
+                android:paddingBottom="50dp"
+                android:typeface="serif"
+                android:textColor="@color/menuOptions"
+                android:textSize="30sp" />
+
+
             <TextView
                 android:id="@+id/more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:text="@string/calendarMore"
-                android:layout_gravity="center_vertical"
-                android:textSize="20dp"
-                android:layout_column="0" />
-        </TableRow>
+                android:layout_gravity="center"
+                android:textColor="@color/menuOptions"
+                android:paddingBottom="50dp"
+                android:typeface="serif"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
-
-    </TableLayout>
-
+</RelativeLayout>
