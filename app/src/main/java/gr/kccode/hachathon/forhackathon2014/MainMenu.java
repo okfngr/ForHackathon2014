@@ -8,17 +8,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainMenu extends Activity {
 
-    private ImageButton wifi;
-    private ImageButton parking;
-    private ImageButton gasStation;
-    private ImageButton calendar;
-    private ImageButton culture;
-    private ImageButton about;
+    private GridView gridView;
+    static final String[] menuOptions = new String[] {"Wifi", "Parking","Gas Station", "Events", "Culture", "About" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,27 +26,39 @@ public class MainMenu extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main_menu);
 
-        wifi = (ImageButton)findViewById(R.id.wifi);
-        wifi.setOnClickListener(wifiButtonOnClickListener);
+        gridView = (GridView) findViewById(R.id.gridView);
 
-        parking = (ImageButton)findViewById(R.id.parking);
-        parking.setOnClickListener(parkingButtonOnClickListener);
+        gridView.setAdapter(new GridAdapter(this, menuOptions));
 
-        gasStation = (ImageButton)findViewById(R.id.gasStation);
-        gasStation.setOnClickListener(gasStationButtonOnClickListener);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
-        calendar = (ImageButton)findViewById(R.id.calendar);
-        calendar.setOnClickListener(calendarButtonOnClickListener);
-
-        culture = (ImageButton)findViewById(R.id.culture);
-        culture.setOnClickListener(cultureButtonOnClickListener);
-
-        about = (ImageButton)findViewById(R.id.about);
-        about.setOnClickListener(aboutButtonOnClickListener);
-
-
-
-
+                if (position == 0){
+                    Intent intent = new Intent(MainMenu.this, Wifi.class);
+                    MainMenu.this.startActivity(intent);
+                }
+                else if (position == 1){
+                    Intent intent = new Intent(MainMenu.this, Parking.class);
+                    MainMenu.this.startActivity(intent);
+                }
+                else if (position == 2){
+                    Intent intent = new Intent(MainMenu.this, GasStation.class);
+                    MainMenu.this.startActivity(intent);
+                }
+                else if (position == 3){
+                    Intent intent = new Intent(MainMenu.this, Calendar.class);
+                    MainMenu.this.startActivity(intent);
+                }
+                else if (position == 4){
+                    Intent intent = new Intent(MainMenu.this, Culture.class);
+                    MainMenu.this.startActivity(intent);
+                }
+                else if (position == 5){
+                    Intent intent = new Intent(MainMenu.this, About.class);
+                    MainMenu.this.startActivity(intent);
+                }
+            }
+        });
     }
 
     @Override
@@ -67,69 +79,6 @@ public class MainMenu extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-    //Starts the wifi activity
-    View.OnClickListener wifiButtonOnClickListener = new View.OnClickListener(){
-
-        @Override
-        public void onClick(View view) {
-
-            Intent intent = new Intent(MainMenu.this, Wifi.class);
-            MainMenu.this.startActivity(intent);
-        }};
-
-    //Starts the parking activity
-    View.OnClickListener parkingButtonOnClickListener = new View.OnClickListener(){
-
-        @Override
-        public void onClick(View view) {
-
-            Intent intent = new Intent(MainMenu.this, Parking.class);
-            MainMenu.this.startActivity(intent);
-        }};
-
-    //Starts the calendar activity
-    View.OnClickListener calendarButtonOnClickListener = new View.OnClickListener(){
-
-        @Override
-        public void onClick(View view) {
-
-            Intent intent = new Intent(MainMenu.this, Calendar.class);
-            MainMenu.this.startActivity(intent);
-        }};
-
-    //Starts the culture activity
-    View.OnClickListener cultureButtonOnClickListener = new View.OnClickListener(){
-
-        @Override
-        public void onClick(View view) {
-
-            Intent intent = new Intent(MainMenu.this, Culture.class);
-            MainMenu.this.startActivity(intent);
-        }};
-
-    //Starts the gasStation activity
-    View.OnClickListener gasStationButtonOnClickListener = new View.OnClickListener(){
-
-        @Override
-        public void onClick(View view) {
-
-            Intent intent = new Intent(MainMenu.this, GasStation.class);
-            MainMenu.this.startActivity(intent);
-        }};
-
-    //Starts the about activity
-    View.OnClickListener aboutButtonOnClickListener = new View.OnClickListener(){
-
-        @Override
-        public void onClick(View view) {
-
-            Intent intent = new Intent(MainMenu.this, About.class);
-            MainMenu.this.startActivity(intent);
-        }};
-
-
-
 
 
 }

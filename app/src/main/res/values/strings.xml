@@ -18,5 +18,10 @@
     <string name="calendarMore">More</string>
     <string name="title_activity_culture_item">CultureItem</string>
     <string name="title_activity_culture_type">CultureType</string>
-
+    <string name="menu1">Wifi</string>
+    <string name="menu2">Parking</string>
+    <string name="menu3">Gas Station</string>
+    <string name="menu4">Events</string>
+    <string name="menu5">Culture</string>
+    <string name="menu6">About</string>
 </resources>

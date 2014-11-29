@@ -1,43 +1,21 @@
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/menu"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:columnCount="2"
-    android:rowCount="3"
-    android:layout_margin="100dp"
-    android:layout_gravity="center"
-    android:orientation="horizontal"
-    tools:context=".GridXMLActivity" >
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="0.85"
+    android:background="@color/menu">
+    <GridView
+        android:id="@+id/gridView"
+        android:numColumns="2"
+        android:columnWidth="100dp"
+        android:stretchMode="columnWidth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:verticalSpacing="30dp"
+        android:horizontalSpacing="10dp"
+        android:layout_margin="10dp">
+    </GridView>
 
-    <ImageButton
-        android:layout_height="50dp"
-        android:layout_width="50dp"
-        android:id="@+id/wifi" />
-
-    <ImageButton
-        android:layout_height="50dp"
-        android:layout_width="50dp"
-        android:id="@+id/parking" />
-
-    <ImageButton
-        android:layout_height="50dp"
-        android:layout_width="50dp"
-        android:id="@+id/gasStation" />
-
-    <ImageButton
-        android:layout_height="50dp"
-        android:layout_width="50dp"
-        android:id="@+id/calendar" />
-
-    <ImageButton
-        android:layout_height="50dp"
-        android:layout_width="50dp"
-        android:id="@+id/culture" />
-
-    <ImageButton
-        android:layout_height="50dp"
-        android:layout_width="50dp"
-        android:id="@+id/about" />
-
-</GridLayout>
+</RelativeLayout>
