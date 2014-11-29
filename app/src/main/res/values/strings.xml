@@ -25,4 +25,7 @@
     <string name="menu5">Culture</string>
     <string name="menu6">About</string>
     <string name="title_activity_maps">Activity Map</string>
+    <string name="closer_wifi">Closer Wifi: </string>
+    <string name="closer_parking">Closer Parking: </string>
+    <string name="closer_gas_station">Closer Gas Station: </string>
 </resources>

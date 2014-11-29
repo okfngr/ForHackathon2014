@@ -10,6 +10,7 @@ import android.location.LocationManager;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -42,7 +43,6 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
             data = DbAdapter.getInstance().gethotspots();
         } else if (id_option == 1) {
             data = DbAdapter.getInstance().getParking_Datas();
-
         } else {
             data = DbAdapter.getInstance().getGashotspots();
         }
@@ -71,8 +71,16 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                     .position(data.get(i).getPoint())
                     .title(data.get(i).getLabel())
                     .icon(BitmapDescriptorFactory.fromResource(colour)));
+        }
 
-
+        if(id_option==0) {
+            Toast.makeText(getApplicationContext(),  getResources().getString(R.string.closer_wifi) , Toast.LENGTH_LONG).show();
+        }
+        else if(id_option==1){
+            Toast.makeText(getApplicationContext(),  getResources().getString(R.string.closer_parking) , Toast.LENGTH_LONG).show();
+        }
+        else if(id_option==2){
+            Toast.makeText(getApplicationContext(),  getResources().getString(R.string.closer_gas_station) , Toast.LENGTH_LONG).show();
         }
     }
 
@@ -128,6 +136,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
 
     @Override
     public void onLocationChanged(Location location) {
+
         
     }
 
