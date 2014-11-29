@@ -5,16 +5,15 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
 public class Event extends Activity {
 
-    private TextView what;
-    private TextView where;
-    private TextView at;
-    private TextView more;
-
+    private Button note;
+    private String eventInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,17 +21,8 @@ public class Event extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_event);
 
-        what = (TextView) findViewById(R.id.what);
-        what.setText(getResources().getString((R.string.calendarWhat)));
+        eventInfo = getResources().getString(R.string.calendarWhat) + ":  Opera\n" +  getResources().getString(R.string.calendarWhere) + ":  Megaro Mousikis\n" + getResources().getString(R.string.calendarTime) + ":  9pm\n" + getResources().getString(R.string.calendarMore) + ":  www.kapou.com\n";
 
-        where = (TextView) findViewById(R.id.where);
-        where.setText(getResources().getString((R.string.calendarWhere)));
-
-        at = (TextView) findViewById(R.id.at);
-        at.setText(getResources().getString((R.string.calendarTime)));
-
-        more = (TextView) findViewById(R.id.more);
-        more.setText(getResources().getString((R.string.calendarMore)));
     }
 
 

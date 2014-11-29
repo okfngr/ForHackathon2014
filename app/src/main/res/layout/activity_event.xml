@@ -1,37 +1,91 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="gr.kccode.hachathon.forhackathon2014.Event">
 
-    <TextView
-        android:id="@+id/what"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
 
-    <TextView
-        android:id="@+id/where"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="0,1">
 
-    <TextView
-        android:id="@+id/at"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:paddingTop="10dp">
+            <ImageView
+                android:layout_height="50dp"
+                android:layout_width="50dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/pin"/>
+            <TextView
+                android:id="@+id/what"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="@string/calendarWhat"
+                android:layout_gravity="center_vertical"
+                android:textSize="20dp"
+                android:layout_column="0" />
+        </TableRow>
+        <TableRow
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center">
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:paddingRight="10dp"
+                android:background="@drawable/pin"/>
+            <TextView
+                android:id="@+id/where"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="@string/calendarWhere"
+                android:layout_gravity="center_vertical"
+                android:textSize="20dp"
+                android:layout_column="0" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            android:layout_gravity="center">
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:paddingRight="10dp"
+                android:background="@drawable/pin"/>
+            <TextView
+                android:id="@+id/at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="@string/calendarTime"
+                android:layout_gravity="center_vertical"
+                android:textSize="20dp"
+                android:layout_column="0" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            android:layout_gravity="center">
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:paddingRight="10dp"
+                android:background="@drawable/pin"/>
+            <TextView
+                android:id="@+id/more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="@string/calendarMore"
+                android:layout_gravity="center_vertical"
+                android:textSize="20dp"
+                android:layout_column="0" />
+        </TableRow>
 
-    <TextView
-        android:id="@+id/more"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
 
-</LinearLayout>
+
+    </TableLayout>
+
