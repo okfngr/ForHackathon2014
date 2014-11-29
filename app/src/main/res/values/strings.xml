@@ -4,5 +4,11 @@
     <string name="app_name">ForHackathon2014</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_wifi">Wifi</string>
+    <string name="title_activity_parking">Parking</string>
+    <string name="title_activity_calendar">Calendar</string>
+    <string name="title_activity_culture">Culture</string>
+    <string name="title_activity_gas_station">GasStation</string>
+    <string name="title_activity_about">About</string>
 
 </resources>

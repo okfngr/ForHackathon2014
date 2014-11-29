@@ -16,6 +16,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Wifi"
+            android:label="@string/title_activity_wifi" >
+        </activity>
+        <activity
+            android:name=".Parking"
+            android:label="@string/title_activity_parking" >
+        </activity>
+        <activity
+            android:name=".Calendar"
+            android:label="@string/title_activity_calendar" >
+        </activity>
+        <activity
+            android:name=".Culture"
+            android:label="@string/title_activity_culture" >
+        </activity>
+        <activity
+            android:name=".GasStation"
+            android:label="@string/title_activity_gas_station" >
+        </activity>
+        <activity
+            android:name=".About"
+            android:label="@string/title_activity_about" >
+        </activity>
     </application>
 
 </manifest>
