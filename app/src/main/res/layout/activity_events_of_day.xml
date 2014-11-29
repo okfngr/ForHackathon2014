@@ -6,6 +6,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/menu"
+    android:alpha="0.88"
     tools:context="gr.kccode.hachathon.forhackathon2014.EventsOfDay">
 
     <ListView android:id="@+id/events"

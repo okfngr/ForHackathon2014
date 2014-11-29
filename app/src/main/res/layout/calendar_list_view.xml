@@ -12,13 +12,21 @@
             android:id="@+id/event"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:text="lalalalal"
+            android:textColor="@color/menuOptions"
             android:layout_gravity="center_vertical"
-            android:textSize="20dp"
+            android:textSize="30sp"
+            android:typeface="serif"
             android:layout_column="0" />
-
-
+        <TextView
+            android:id="@+id/arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/menuOptions"
+            android:layout_gravity="end"
+            android:textSize="60sp"
+            android:typeface="serif"
+            android:text=">"
+            android:layout_column="0" />
     </TableRow>
 
     <!-- Line -->
