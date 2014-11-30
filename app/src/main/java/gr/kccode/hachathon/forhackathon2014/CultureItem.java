@@ -23,8 +23,8 @@ public class CultureItem extends FragmentActivity {
     private GoogleMap mMap;
     private int id_culture;
     private Culture_Data cd;
-    private ImageButton culturePhoto;
     private TextView cultureTitle;
+    private TextView cultureDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +36,11 @@ public class CultureItem extends FragmentActivity {
 
         cd=DbAdapter.getInstance().getCulturebyId(id_culture);
 
-        culturePhoto = (ImageButton)findViewById(R.id.culturePhoto);
-        culturePhoto.setBackgroundResource(R.drawable.wifi);
-
         cultureTitle = (TextView)findViewById(R.id.cultureName);
         cultureTitle.setText("kapoio culture");
+
+        cultureDescription = (TextView)findViewById(R.id.cultureDescription);
+        cultureDescription.setText("Parastaseis, kai oti thes");
 
         setUpMap();
 

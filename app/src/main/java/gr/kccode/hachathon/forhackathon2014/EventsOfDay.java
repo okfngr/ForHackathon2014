@@ -43,6 +43,7 @@ public class EventsOfDay extends Activity {
             public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
 
                 Intent intent = new Intent(EventsOfDay.this, Event.class);
+                intent.putExtra("id",events.get(position).getID());
                 EventsOfDay.this.startActivity(intent);
 
 
