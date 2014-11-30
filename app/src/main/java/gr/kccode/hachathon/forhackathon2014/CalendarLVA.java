@@ -10,12 +10,12 @@ import android.widget.TextView;
 /**
  * Created by kiki__000 on 29-Nov-14.
  */
-public class CalendarLVA  extends ArrayAdapter<String> {
+public class CalendarLVA  extends ArrayAdapter<BasicData> {
 
     private final Activity context;
-    private final String[] options;
+    private final BasicData[] options;
 
-    public CalendarLVA(Activity context, String[] options) {
+    public CalendarLVA(Activity context, BasicData[] options) {
         super(context, R.layout.calendar_list_view, options);
         this.context = context;
         this.options = options;
@@ -26,7 +26,7 @@ public class CalendarLVA  extends ArrayAdapter<String> {
         LayoutInflater inflater = context.getLayoutInflater();
         View rowView= inflater.inflate(R.layout.calendar_list_view, null, true);
         TextView txtTitle = (TextView) rowView.findViewById(R.id.event);
-        txtTitle.setText(options[position]);
+        txtTitle.setText(options[position].getLabel());
 
         return rowView;
     }

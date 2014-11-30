@@ -4,6 +4,8 @@ package gr.kccode.hachathon.forhackathon2014;
  * Created by Chris on 11/29/2014.
  */
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
@@ -65,6 +67,7 @@ final class DbAdapter {
      * Fills the arrays with data from the DB
      */
     private void fillArrays() {
+
         hotspots = db.getAllWifi_Data();
        parkings = db.getAllParking_Data();
         gashspots = db.getAllGasStation_Data();
@@ -122,6 +125,7 @@ final class DbAdapter {
             this.gashspots.clear();
 
         }
+        populateDB();
         this.fillArrays();
 
     }
@@ -138,7 +142,45 @@ final class DbAdapter {
      */
     private void populateDB() {
 
+        this.db.addCulture_Data(new Culture_Data(1,new LatLng(1,2),"lalala","lalalal",Culture_Data.Type.CINEMA));
+
+        this.db.addCulture_Data(new Culture_Data(2,new LatLng(1,10),"lalala","lalalal",Culture_Data.Type.MUSEUM));
+
+        this.db.addCulture_Data(new Culture_Data(3,new LatLng(1,10),"lalala","lalalal",Culture_Data.Type.CINEMA));
+        this.db.addCulture_Data(new Culture_Data(4,new LatLng(1,10),"lalala","lalalal",Culture_Data.Type.CINEMA));
+        this.db.addCulture_Data(new Culture_Data(5,new LatLng(1,10),"lalala","lalalal",Culture_Data.Type.CINEMA));
+
     }
 
 
+    public Culture_Data getCulturebyId(int id_culture) {
+        for(int i=0;i<culturals.size();i++){
+            if(culturals.get(i).getID()==id_culture) return (Culture_Data)culturals.get(i);
+        }
+        return new Culture_Data();
+    }
+
+    public ArrayList<BasicData> getculturabyType(Culture_Data.Type type) {
+
+        ArrayList<BasicData> bds=new ArrayList<BasicData>();
+
+        for(int i=0; i<this.getcultura().size();i++){
+            Culture_Data cd=(Culture_Data) this.getcultura().get(i);
+            if(cd.getType()==type){
+                bds.add(cd);
+            }
+        }
+        return bds;
+
+
+
+    }
+
+    public BasicData getdatebyId(int id) {
+
+        for(BasicData bd: this.getdates()){
+            if(bd.getID()==id) return bd;
+        }
+        return null;
+    }
 }

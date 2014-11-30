@@ -26,7 +26,10 @@ public class Calendar extends Activity {
             @Override
             public void onSelectedDayChange(CalendarView view,int year, int month, int dayOfMonth) {
 
+
+
                 Intent intent = new Intent(Calendar.this, EventsOfDay.class);
+
                 Calendar.this.startActivity(intent);
 
             }});

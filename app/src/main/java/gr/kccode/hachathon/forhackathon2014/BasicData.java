@@ -11,9 +11,8 @@ public class BasicData {
     private String label;
 
     public BasicData() {
+        point=new LatLng(0,0);
     }
-
-    ;
 
     public BasicData(int ID, LatLng point, String Label) {
         this.setID(ID);

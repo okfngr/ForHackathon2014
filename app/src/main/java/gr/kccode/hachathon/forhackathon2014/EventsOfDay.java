@@ -10,11 +10,13 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 
 public class EventsOfDay extends Activity {
 
     private ListView eventsListView;
-    private String[] events;
+    private ArrayList<BasicData> events;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +24,15 @@ public class EventsOfDay extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_events_of_day);
 
-        events = new String[]{"lalal1", "lalal2"};
+        int ids[]=getIntent().getIntArrayExtra("IDS");
 
-        CalendarLVA adapter = new CalendarLVA(EventsOfDay.this, events);
+        for(int i=0;i<ids.length;i++) {
+
+
+            events.add( DbAdapter.getInstance().getdatebyId(ids[i]));
+        }
+
+        CalendarLVA adapter = new CalendarLVA(EventsOfDay.this, events.toArray(new BasicData[0]));
         eventsListView = (ListView) findViewById(R.id.events);
         eventsListView.setAdapter(adapter);
         eventsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

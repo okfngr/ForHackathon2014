@@ -10,11 +10,13 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 
 public class Culture extends Activity {
 
     private ListView cultureListView;
-    private String[] types;
+    private ArrayList<BasicData> categories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,16 +24,18 @@ public class Culture extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_culture);
 
-        types = new String[]{"lalal1", "lalal2"};
+        categories=Culture_Data.getTypes();
 
-        CalendarLVA adapter = new CalendarLVA(Culture.this, types);
+        CalendarLVA adapter = new CalendarLVA(Culture.this, categories.toArray(new BasicData[0]));
         cultureListView = (ListView) findViewById(R.id.cultureAllTypes);
         cultureListView.setAdapter(adapter);
         cultureListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
 
+                BasicData cd=(BasicData)categories.get(position);
                 Intent intent = new Intent(Culture.this, CultureType.class);
+                intent.putExtra("id_Type",cd.getID());
                 Culture.this.startActivity(intent);
 
 

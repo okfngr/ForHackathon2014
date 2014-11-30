@@ -14,11 +14,15 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Locale;
+
 
 public class MainMenu extends Activity {
 
     private GridView gridView;
     static final String[] menuOptions = new String[] {"Wifi", "Parking","Gas Station", "Events", "Culture", "About" };
+    private static DbHelper db;
+    //Initialize the db and add data
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +30,7 @@ public class MainMenu extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main_menu);
 
-        DbAdapter.getInstance().setDB(new DbHelper(this));
+        this.initializeDB();
 
         gridView = (GridView) findViewById(R.id.gridView);
 
@@ -64,8 +68,15 @@ public class MainMenu extends Activity {
                 }
             }
         });
+
     }
 
+
+    public void initializeDB()
+    {
+        db = new DbHelper(this);
+        DbAdapter.getInstance().setDB(db);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

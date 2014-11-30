@@ -21,7 +21,7 @@ public class DbHelper extends SQLiteOpenHelper {
     // Database Version
     private static final int DATABASE_VERSION = 1;
     // Database Name
-    private static final String DATABASE_NAME = "HackathonDB";
+    private static final String DATABASE_NAME = "HACKATHONDB";
 
 
 
@@ -70,6 +70,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         // SQL statement to create table photo
         query = "CREATE TABLE IF NOT EXISTS PARKING_DATA ( " +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "d_x REAL,"+
                 "d_y REAL"+
                 "label TEXT,"+
@@ -93,7 +94,7 @@ public class DbHelper extends SQLiteOpenHelper {
         query = "CREATE TABLE IF NOT EXISTS CULTURE_DATA ( " +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "d_x REAL,"+
-                "d_y REAL"+
+                "d_y REAL,"+
                 "label TEXT,"+
                 "description TEXT," +
                 "type TEXT)";
@@ -140,7 +141,7 @@ public class DbHelper extends SQLiteOpenHelper {
      * adds a new entry Calendar_Data to the table Calendar_Data
      * @param calendar_data
      */
-    public void addStation(Calendar_Data calendar_data)
+    public void addCalendar_Data(Calendar_Data calendar_data)
     {
         String table="CALENDAR_DATA";
 
@@ -184,7 +185,7 @@ public class DbHelper extends SQLiteOpenHelper {
      * adds a new entry to the table wifi_data
      * @param wifi_data
      */
-    public void setWifi_Data(Wifi_Data wifi_data)
+    public void AddWifi_Data(Wifi_Data wifi_data)
     {
         String table="WIFI_DATA";
 
@@ -627,7 +628,7 @@ public class DbHelper extends SQLiteOpenHelper {
      */
     public ArrayList<BasicData> getAllParking_Data()
     {
-        String table="WIFI_DATA";
+        String table="PARKING_DATA";
 
 
 
@@ -700,7 +701,7 @@ public class DbHelper extends SQLiteOpenHelper {
      */
     public ArrayList<BasicData> getAllCulture_Data()
     {
-        String table="GASSTATION_DATA";
+        String table="CULTURE_DATA";
 
 
 
@@ -721,8 +722,11 @@ public class DbHelper extends SQLiteOpenHelper {
                 culture_data.setX(Double.parseDouble(cursor.getString(1))); //name
                 culture_data.setY(Double.parseDouble(cursor.getString(2))); //name
                 culture_data.setLabel(cursor.getString(3)); //description
+                culture_data.setDescription(cursor.getString(4)); //route_id
+                culture_data.setType(cursor.getString(5));
 
                 culturals.add(culture_data);
+
             } while (cursor.moveToNext());
         }
 

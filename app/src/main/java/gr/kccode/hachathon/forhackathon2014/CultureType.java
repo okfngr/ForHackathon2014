@@ -8,13 +8,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 
 public class CultureType extends Activity {
 
     private ListView typeListView;
-    private String[] types;
+    private ArrayList<BasicData> objs;
+    private int id_Type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,16 +27,22 @@ public class CultureType extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_culture_type);
 
-        types = new String[]{"lalal1", "lalal2"};
+        id_Type=this.getIntent().getIntExtra("id_Type",0);
 
-        CalendarLVA adapter = new CalendarLVA(CultureType.this, types);
+        Toast.makeText(this,""+id_Type,Toast.LENGTH_LONG).show();
+        objs = DbAdapter.getInstance().getculturabyType(Culture_Data.getType(id_Type));
+        Toast.makeText(this,""+objs.size(),Toast.LENGTH_LONG).show();
+
+        CalendarLVA adapter = new CalendarLVA(CultureType.this,objs.toArray(new BasicData[0]));
         typeListView = (ListView) findViewById(R.id.cultureType);
         typeListView.setAdapter(adapter);
         typeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
 
+                BasicData bd=objs.get(position);
                 Intent intent = new Intent(CultureType.this, CultureItem.class);
+                intent.putExtra("id_culture",bd.getID());
                 CultureType.this.startActivity(intent);
 
 
