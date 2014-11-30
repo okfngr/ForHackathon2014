@@ -1,6 +1,6 @@
 <resources>
 
-    <color name="menu">#ff000000</color>
+    <color name="menu">#000000</color>
     <color name="menuOptions">#ffffff</color>
 
 </resources>

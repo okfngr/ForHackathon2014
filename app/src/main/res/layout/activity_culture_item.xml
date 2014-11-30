@@ -2,6 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/menu"
+    android:divider="@android:color/transparent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -19,16 +21,21 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/CulturePhoto"
-                android:layout_width="60dp"
-                android:layout_height="50dp"/>
+                android:id="@+id/culturePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"/>
 
             <TextView
-                android:id="@+id/CultureName"
+                android:id="@+id/cultureName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Titlos" />
+                android:layout_margin="5dp"
+                android:textColor="@color/menuOptions"
+                android:textSize="25sp"
+                android:text="@string/title_culture_item" />
 
             <fragment
                 android:name="com.google.android.gms.maps.SupportMapFragment"

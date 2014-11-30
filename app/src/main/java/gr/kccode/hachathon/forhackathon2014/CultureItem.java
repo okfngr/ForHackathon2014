@@ -9,20 +9,22 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
 
 public class CultureItem extends FragmentActivity {
 
     private GoogleMap mMap;
     private int id_culture;
     private Culture_Data cd;
+    private ImageButton culturePhoto;
+    private TextView cultureTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +36,13 @@ public class CultureItem extends FragmentActivity {
 
         cd=DbAdapter.getInstance().getCulturebyId(id_culture);
 
+        culturePhoto = (ImageButton)findViewById(R.id.culturePhoto);
+        culturePhoto.setBackgroundResource(R.drawable.wifi);
+
+        cultureTitle = (TextView)findViewById(R.id.cultureName);
+        cultureTitle.setText("kapoio culture");
+
         setUpMap();
-
-
-
-
 
     }
 

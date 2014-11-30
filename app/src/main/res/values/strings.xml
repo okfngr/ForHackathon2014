@@ -28,6 +28,7 @@
     <string name="closer_wifi">Closer Wifi: </string>
     <string name="closer_parking">Closer Parking: </string>
     <string name="closer_gas_station">Closer Gas Station: </string>
+    <string name="title_culture_item">Title </string>
     <string name="about">This app designed for the Hackathon Event 2014. Shows the wifi, parking and gas-station spots in map.
         Also, there is a calendar which contains all the events that take place in Thessaloniki per day. And finally, describes all
         the places for cultural events such as theater performances, cinema, museums etc.
