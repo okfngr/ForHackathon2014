@@ -108,4 +108,17 @@ public class Calendar_Data extends BasicData {
         this.setSth(sth);
         this.setStm(stm);
     }
+
+    /**Return true if events exist
+     *  in this day else false
+     **/
+    public boolean equalDay(int day, int month, int year){
+
+        if(day == getDayOfMonth() && month == getMonth() && year == getYear()){
+            return true;
+        }
+        else
+            return false;
+
+    }
 }

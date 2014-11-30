@@ -183,4 +183,18 @@ final class DbAdapter {
         }
         return null;
     }
+
+    public ArrayList<BasicData> getExistEvents(int day, int month, int year) {
+
+        ArrayList<BasicData> bc=new ArrayList<BasicData>();
+
+        for(int i=0; i<this.getdates().size();i++){
+            Calendar_Data c=(Calendar_Data)this.getdates().get(i);
+            if(c.equalDay(day,month,year)){
+                bc.add(c);
+            }
+        }
+
+        return bc;
+    }
 }

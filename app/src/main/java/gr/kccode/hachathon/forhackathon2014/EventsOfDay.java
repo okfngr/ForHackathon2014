@@ -17,6 +17,10 @@ public class EventsOfDay extends Activity {
 
     private ListView eventsListView;
     private ArrayList<BasicData> events;
+    private int day;
+    private int month;
+    private int year;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +28,12 @@ public class EventsOfDay extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_events_of_day);
 
-        int ids[]=getIntent().getIntArrayExtra("IDS");
+        Intent intent = getIntent();
+        day = intent.getIntExtra("day", 0);
+        month = intent.getIntExtra("month", 0);
+        year = intent.getIntExtra("year", 0);
 
-        for(int i=0;i<ids.length;i++) {
-
-
-            events.add( DbAdapter.getInstance().getdatebyId(ids[i]));
-        }
+        events=DbAdapter.getInstance().getExistEvents(day, month, year);
 
         CalendarLVA adapter = new CalendarLVA(EventsOfDay.this, events.toArray(new BasicData[0]));
         eventsListView = (ListView) findViewById(R.id.events);
