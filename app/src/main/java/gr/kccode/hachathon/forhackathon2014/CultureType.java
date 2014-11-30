@@ -26,6 +26,7 @@ public class CultureType extends Activity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_culture_type);
+        overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 
         id_Type=this.getIntent().getIntExtra("id_Type",0);
 

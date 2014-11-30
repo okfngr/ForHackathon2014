@@ -24,6 +24,8 @@ public class Culture extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_culture);
 
+        overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+
         categories=Culture_Data.getTypes();
 
         CalendarLVA adapter = new CalendarLVA(Culture.this, categories.toArray(new BasicData[0]));

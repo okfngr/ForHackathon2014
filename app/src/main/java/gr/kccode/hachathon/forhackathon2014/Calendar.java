@@ -24,6 +24,8 @@ public class Calendar extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_calendar);
 
+        overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+
         calendar = (CalendarView)findViewById(R.id.calendar);
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener(){
 

@@ -27,6 +27,7 @@ public class EventsOfDay extends Activity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_events_of_day);
+        overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 
         Intent intent = getIntent();
         day = intent.getIntExtra("day", 0);

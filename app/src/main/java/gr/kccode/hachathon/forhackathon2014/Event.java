@@ -21,6 +21,7 @@ public class Event extends Activity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_event);
+        overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 
         Intent intent = getIntent();
         id = intent.getIntExtra("id", 0);
