@@ -24,4 +24,5 @@
     <string name="menu4">Events</string>
     <string name="menu5">Culture</string>
     <string name="menu6">About</string>
+    <string name="title_activity_maps">Activity Map</string>
 </resources>

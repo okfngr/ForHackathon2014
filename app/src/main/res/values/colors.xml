@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="wifi">#ffff6122</color>
+    <color name="parking">#ffca1677</color>
+    <color name="gas">#ff16ca16</color>
+</resources>

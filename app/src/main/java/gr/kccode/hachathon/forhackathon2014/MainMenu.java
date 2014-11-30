@@ -26,6 +26,8 @@ public class MainMenu extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main_menu);
 
+        DbAdapter.getInstance().setDB(new DbHelper(this));
+
         gridView = (GridView) findViewById(R.id.gridView);
 
         gridView.setAdapter(new GridAdapter(this, menuOptions));
@@ -34,15 +36,18 @@ public class MainMenu extends Activity {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
                 if (position == 0){
-                    Intent intent = new Intent(MainMenu.this, Wifi.class);
+                    Intent intent = new Intent(MainMenu.this, MapsActivity.class);
+                    intent.putExtra("id_option",position);
                     MainMenu.this.startActivity(intent);
                 }
                 else if (position == 1){
-                    Intent intent = new Intent(MainMenu.this, Parking.class);
+                    Intent intent = new Intent(MainMenu.this, MapsActivity.class);
+                    intent.putExtra("id_option",position);
                     MainMenu.this.startActivity(intent);
                 }
                 else if (position == 2){
-                    Intent intent = new Intent(MainMenu.this, GasStation.class);
+                    Intent intent = new Intent(MainMenu.this, MapsActivity.class);
+                    intent.putExtra("id_option",position);
                     MainMenu.this.startActivity(intent);
                 }
                 else if (position == 3){

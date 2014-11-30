@@ -2,13 +2,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="gr.kccode.hachathon.forhackathon2014" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <!--
+ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but are recommended.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainMenu"
+            android:name="gr.kccode.hachathon.forhackathon2014.MainMenu"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,44 +28,59 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Wifi"
+            android:name="gr.kccode.hachathon.forhackathon2014.Wifi"
             android:label="@string/title_activity_wifi" >
         </activity>
         <activity
-            android:name=".Parking"
+            android:name="gr.kccode.hachathon.forhackathon2014.Parking"
             android:label="@string/title_activity_parking" >
         </activity>
         <activity
-            android:name=".Calendar"
+            android:name="gr.kccode.hachathon.forhackathon2014.Calendar"
             android:label="@string/title_activity_calendar" >
         </activity>
         <activity
-            android:name=".Culture"
+            android:name="gr.kccode.hachathon.forhackathon2014.Culture"
             android:label="@string/title_activity_culture" >
         </activity>
         <activity
-            android:name=".GasStation"
+            android:name="gr.kccode.hachathon.forhackathon2014.GasStation"
             android:label="@string/title_activity_gas_station" >
         </activity>
         <activity
-            android:name=".About"
+            android:name="gr.kccode.hachathon.forhackathon2014.About"
             android:label="@string/title_activity_about" >
         </activity>
         <activity
-            android:name=".EventsOfDay"
+            android:name="gr.kccode.hachathon.forhackathon2014.EventsOfDay"
             android:label="@string/title_activity_events_of_day" >
         </activity>
         <activity
-            android:name=".Event"
+            android:name="gr.kccode.hachathon.forhackathon2014.Event"
             android:label="@string/title_activity_event" >
         </activity>
         <activity
-            android:name=".CultureItem"
+            android:name="gr.kccode.hachathon.forhackathon2014.CultureItem"
             android:label="@string/title_activity_culture_item" >
         </activity>
         <activity
-            android:name=".CultureType"
+            android:name="gr.kccode.hachathon.forhackathon2014.CultureType"
             android:label="@string/title_activity_culture_type" >
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name="gr.kccode.hachathon.forhackathon2014.MapsActivity"
+            android:label="@string/title_activity_maps" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="gr.kccode.hachathon.forhackathon2014.MainMenu" />
         </activity>
     </application>
 

@@ -26,28 +26,28 @@ final class DbAdapter {
     /**
      * array of hotspots
      */
-    private ArrayList<Wifi_Data> hotspots = new ArrayList<Wifi_Data>();
+    private ArrayList<BasicData> hotspots = new ArrayList<BasicData>();
 
     /**
      * array of Parking_Datas
      */
-    private ArrayList<Parking_Data> parkings = new ArrayList<Parking_Data>();
+    private ArrayList<BasicData> parkings = new ArrayList<BasicData>();
 
 
     /**
      * array of Gashotspots
      */
-    private ArrayList<GasStation_Data> gashspots = new ArrayList<GasStation_Data>();
+    private ArrayList<BasicData> gashspots = new ArrayList<BasicData>();
 
     /**
      * array of dates
      */
-    private ArrayList<Calendar_Data> dates = new ArrayList<Calendar_Data>();
+    private ArrayList<BasicData> dates = new ArrayList<BasicData>();
 
     /**
      * array of timeline hotspots
      */
-    private ArrayList<Culture_Data> culturals = new ArrayList<Culture_Data>();
+    private ArrayList<BasicData> culturals = new ArrayList<BasicData>();
 
 
     /**
@@ -75,14 +75,14 @@ final class DbAdapter {
     /**
      * @return all the hotspots in the DB
      */
-    public ArrayList<Wifi_Data> gethotspots() {
+    public ArrayList<BasicData> gethotspots() {
         return this.hotspots;
     }
 
     /**
      * @return all the Parking_Datas in the DB
      */
-    public ArrayList<Parking_Data> getParking_Datas() {
+    public ArrayList<BasicData> getParking_Datas() {
         return parkings;
     }
 
@@ -90,21 +90,21 @@ final class DbAdapter {
     /**
      * @return all the dates in the DB
      */
-    public ArrayList<Calendar_Data> getdates() {
+    public ArrayList<BasicData> getdates() {
         return dates;
     }
 
     /**
      * @return all the Gashotspots in the DB
      */
-    public ArrayList<GasStation_Data> getGashotspots() {
+    public ArrayList<BasicData> getGashotspots() {
         return gashspots;
     }
 
     /**
      * @return all the timeline hotspots
      */
-    public ArrayList<Culture_Data> getcultura() {
+    public ArrayList<BasicData> getcultura() {
         return this.culturals;
     }
 

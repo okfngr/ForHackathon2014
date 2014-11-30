@@ -544,7 +544,7 @@ public class DbHelper extends SQLiteOpenHelper {
      *
      * @return all dates in the db
      */
-    public ArrayList<Calendar_Data> getAllCalendar_Data()
+    public ArrayList<BasicData> getAllCalendar_Data()
     {
         String table="CALENDAR_DATA";
 
@@ -558,7 +558,7 @@ public class DbHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, null);
 
         //go over each row, build Calendar_Data and add it to list
-        ArrayList<Calendar_Data> dates=new ArrayList<Calendar_Data>();
+        ArrayList<BasicData> dates=new ArrayList<BasicData>();
         if (cursor.moveToFirst()) {
             do {
                 //build calendar_data object
@@ -589,7 +589,7 @@ public class DbHelper extends SQLiteOpenHelper {
      *
      * @return all dates in the db
      */
-    public ArrayList<Wifi_Data> getAllWifi_Data()
+    public ArrayList<BasicData> getAllWifi_Data()
     {
         String table="WIFI_DATA";
 
@@ -603,7 +603,7 @@ public class DbHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, null);
 
         //go over each row, build Calendar_Data and add it to list
-        ArrayList<Wifi_Data> wifis = new ArrayList<Wifi_Data>();
+        ArrayList<BasicData> wifis = new ArrayList<BasicData>();
         if (cursor.moveToFirst()) {
             do {
                 //build calendar_data object
@@ -625,7 +625,7 @@ public class DbHelper extends SQLiteOpenHelper {
      *
      * @return all parkings in the db
      */
-    public ArrayList<Parking_Data> getAllParking_Data()
+    public ArrayList<BasicData> getAllParking_Data()
     {
         String table="WIFI_DATA";
 
@@ -639,7 +639,7 @@ public class DbHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, null);
 
         //go over each row, build Calendar_Data and add it to list
-        ArrayList<Parking_Data> parkings = new ArrayList<Parking_Data>();
+        ArrayList<BasicData> parkings = new ArrayList<BasicData>();
         if (cursor.moveToFirst()) {
             do {
                 //build calendar_data object
@@ -662,7 +662,7 @@ public class DbHelper extends SQLiteOpenHelper {
      *
      * @return all gasStations in the db
      */
-    public ArrayList<GasStation_Data> getAllGasStation_Data()
+    public ArrayList<BasicData> getAllGasStation_Data()
     {
         String table="GASSTATION_DATA";
 
@@ -676,7 +676,7 @@ public class DbHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, null);
 
         //go over each row, build Calendar_Data and add it to list
-        ArrayList<GasStation_Data> gasStations = new ArrayList<GasStation_Data>();
+        ArrayList<BasicData> gasStations = new ArrayList<BasicData>();
         if (cursor.moveToFirst()) {
             do {
                 //build calendar_data object
@@ -698,7 +698,7 @@ public class DbHelper extends SQLiteOpenHelper {
      *
      * @return all parkings in the db
      */
-    public ArrayList<Culture_Data> getAllCulture_Data()
+    public ArrayList<BasicData> getAllCulture_Data()
     {
         String table="GASSTATION_DATA";
 
@@ -712,7 +712,7 @@ public class DbHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, null);
 
         //go over each row, build Calendar_Data and add it to list
-        ArrayList<Culture_Data> culturals = new ArrayList<Culture_Data>();
+        ArrayList<BasicData> culturals = new ArrayList<BasicData>();
         if (cursor.moveToFirst()) {
             do {
                 //build calendar_data object
