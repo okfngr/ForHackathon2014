@@ -19,6 +19,9 @@ public class Culture_Data extends BasicData {
         return type;
     }
 
+    public void setType(String type) {
+        this.type = Type.CINEMA;
+    }
     public void setType(Type type) {
         this.type = type;
     }

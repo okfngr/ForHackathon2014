@@ -31,13 +31,13 @@ final class DbAdapter {
     /**
      * array of Parking_Datas
      */
-    private ArrayList<Parking_Data> Parking_Datas = new ArrayList<Parking_Data>();
+    private ArrayList<Parking_Data> parkings = new ArrayList<Parking_Data>();
 
 
     /**
      * array of Gashotspots
      */
-    private ArrayList<GasStation_Data> Gashotspots = new ArrayList<GasStation_Data>();
+    private ArrayList<GasStation_Data> gashspots = new ArrayList<GasStation_Data>();
 
     /**
      * array of dates
@@ -47,7 +47,7 @@ final class DbAdapter {
     /**
      * array of timeline hotspots
      */
-    private ArrayList<Culture_Data> cultura = new ArrayList<Culture_Data>();
+    private ArrayList<Culture_Data> culturals = new ArrayList<Culture_Data>();
 
 
     /**
@@ -65,11 +65,11 @@ final class DbAdapter {
      * Fills the arrays with data from the DB
      */
     private void fillArrays() {
-        hotspots = db.getAllhotspots();
-        Parking_Datas = db.getAllParking_Datas();
-        Gashotspots = db.getAllGashotspots();
-        dates = db.getAlldates();
-        cultura = db.getAllcultura();
+        hotspots = db.getAllWifi_Data();
+       parkings = db.getAllParking_Data();
+        gashspots = db.getAllGasStation_Data();
+        dates = db.getAllCalendar_Data();
+        culturals = db.getAllCulture_Data();
     }
 
     /**
@@ -83,7 +83,7 @@ final class DbAdapter {
      * @return all the Parking_Datas in the DB
      */
     public ArrayList<Parking_Data> getParking_Datas() {
-        return Parking_Datas;
+        return parkings;
     }
 
 
@@ -98,14 +98,14 @@ final class DbAdapter {
      * @return all the Gashotspots in the DB
      */
     public ArrayList<GasStation_Data> getGashotspots() {
-        return Gashotspots;
+        return gashspots;
     }
 
     /**
      * @return all the timeline hotspots
      */
     public ArrayList<Culture_Data> getcultura() {
-        return this.cultura;
+        return this.culturals;
     }
 
     /**
@@ -117,9 +117,9 @@ final class DbAdapter {
         this.db = db;
         if (!hotspots.isEmpty()) {
             this.hotspots.clear();
-            this.Parking_Datas.clear();
-            this.cultura.clear();
-            this.Gashotspots.clear();
+            this.parkings.clear();
+            this.culturals.clear();
+            this.gashspots.clear();
 
         }
         this.fillArrays();
