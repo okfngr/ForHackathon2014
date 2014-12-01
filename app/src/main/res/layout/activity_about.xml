@@ -55,6 +55,10 @@
                 android:text="@string/developers"
                 android:typeface="serif"
                 android:textSize="15sp" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/photo"/>
 
 
             <TextView
