@@ -12,6 +12,8 @@ public class BasicData {
 
     public BasicData() {
         point=new LatLng(0,0);
+        ID=1;
+        label="";
     }
 
     public BasicData(int ID, LatLng point, String Label) {
@@ -45,11 +47,11 @@ public class BasicData {
     }
 
     public double getX() {
-        return point.longitude;
+        return point.latitude;
     }
 
     public double getY() {
-        return point.latitude;
+        return point.longitude;
     }
 
 

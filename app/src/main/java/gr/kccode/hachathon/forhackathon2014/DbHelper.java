@@ -48,10 +48,10 @@ public class DbHelper extends SQLiteOpenHelper {
                 "minuteStart INTEGER, "+
                 "hourEnd INTEGER, "+
                 "minuteEnd INTEGER, "+
-                "d_x REAL,"+
-                "d_y REAL"+
-                "label TEXT,"+
-                "description TEXT," +
+                "d_x REAL, "+
+                "d_y REAL, "+
+                "label TEXT, "+
+                "description TEXT, " +
                 "link TEXT)";
 
         // create CULTURE DATA
@@ -60,8 +60,8 @@ public class DbHelper extends SQLiteOpenHelper {
         // SQL statement to create table Calendar_Data
         query = "CREATE TABLE IF NOT EXISTS WIFI_DATA ( " +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "d_x REAL,"+
-                "d_y REAL"+
+                "d_x REAL, "+
+                "d_y REAL, "+
                 "label TEXT,"+
                 "description TEXT)";
 
@@ -71,8 +71,8 @@ public class DbHelper extends SQLiteOpenHelper {
         // SQL statement to create table photo
         query = "CREATE TABLE IF NOT EXISTS PARKING_DATA ( " +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "d_x REAL,"+
-                "d_y REAL"+
+                "d_x REAL, "+
+                "d_y REAL, "+
                 "label TEXT,"+
                 "description TEXT)";
 
@@ -82,8 +82,8 @@ public class DbHelper extends SQLiteOpenHelper {
         // SQL statement to create table movie
         query = "CREATE TABLE IF NOT EXISTS GASSTATION_DATA ( " +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "d_x REAL,"+
-                "d_y REAL"+
+                "d_x REAL, "+
+                "d_y REAL, "+
                 "label TEXT,"+
                 "description TEXT)";
 
@@ -93,8 +93,8 @@ public class DbHelper extends SQLiteOpenHelper {
         // SQL statement to create table timelinestation
         query = "CREATE TABLE IF NOT EXISTS CULTURE_DATA ( " +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "d_x REAL,"+
-                "d_y REAL,"+
+                "d_x REAL, "+
+                "d_y REAL, "+
                 "label TEXT,"+
                 "description TEXT," +
                 "type TEXT)";

@@ -30,9 +30,9 @@ public class CultureType extends Activity {
 
         id_Type=this.getIntent().getIntExtra("id_Type",0);
 
-        Toast.makeText(this,""+id_Type,Toast.LENGTH_LONG).show();
+        //Toast.makeText(this,""+id_Type,Toast.LENGTH_LONG).show();
         objs = DbAdapter.getInstance().getculturabyType(Culture_Data.getType(id_Type));
-        Toast.makeText(this,""+objs.size(),Toast.LENGTH_LONG).show();
+        //Toast.makeText(this,""+objs.size(),Toast.LENGTH_LONG).show();
 
         CalendarLVA adapter = new CalendarLVA(CultureType.this,objs.toArray(new BasicData[0]));
         typeListView = (ListView) findViewById(R.id.cultureType);

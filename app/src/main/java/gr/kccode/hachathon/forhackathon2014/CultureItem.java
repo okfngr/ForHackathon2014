@@ -38,10 +38,10 @@ public class CultureItem extends FragmentActivity {
         cd=DbAdapter.getInstance().getCulturebyId(id_culture);
 
         cultureTitle = (TextView)findViewById(R.id.cultureName);
-        cultureTitle.setText("kapoio culture");
+        cultureTitle.setText(cd.getType().toString());
 
         cultureDescription = (TextView)findViewById(R.id.cultureDescription);
-        cultureDescription.setText("Parastaseis, kai oti thes");
+        cultureDescription.setText(cd.getDescription());
 
         setUpMap();
 

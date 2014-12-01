@@ -19,14 +19,14 @@
             android:layout_column="0" />
         <TextView
             android:id="@+id/arrow"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/menuOptions"
             android:layout_gravity="end"
             android:textSize="60sp"
             android:typeface="serif"
             android:text=">"
-            android:layout_column="0" />
+            android:layout_column="1" />
     </TableRow>
 
     <!-- Line -->

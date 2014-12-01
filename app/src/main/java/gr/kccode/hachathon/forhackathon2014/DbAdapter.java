@@ -4,6 +4,7 @@ package gr.kccode.hachathon.forhackathon2014;
  * Created by Chris on 11/29/2014.
  */
 
+import com.google.android.gms.internal.cs;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.lang.reflect.Field;
@@ -125,8 +126,13 @@ final class DbAdapter {
             this.gashspots.clear();
 
         }
-        populateDB();
         this.fillArrays();
+
+        if(hotspots.isEmpty()){
+            populateDB();
+            fillArrays();
+
+        }
 
     }
 
@@ -142,13 +148,74 @@ final class DbAdapter {
      */
     private void populateDB() {
 
-        this.db.addCulture_Data(new Culture_Data(1,new LatLng(1,2),"lalala","lalalal",Culture_Data.Type.CINEMA));
+        this.db.AddWifi_Data(new Wifi_Data(1,new LatLng(40.641142, 22.934721),"wifi",""));
+        this.db.AddWifi_Data(new Wifi_Data(2,new LatLng(40.635650, 22.935431),"free wifi",""));
+        this.db.AddWifi_Data(new Wifi_Data(3,new LatLng(40.630440, 22.942912),"The wifi",""));
+        this.db.AddWifi_Data(new Wifi_Data(4,new LatLng(40.632804, 22.941331),"Dat wifi",""));
+        this.db.AddWifi_Data(new Wifi_Data(5,new LatLng(40.632511, 22.947489),"sooo wifi",""));
 
-        this.db.addCulture_Data(new Culture_Data(2,new LatLng(1,10),"lalala","lalalal",Culture_Data.Type.MUSEUM));
+        this.db.addParking_Data(new Parking_Data(1,new LatLng(40.641142,  22.934721),"Free Parking"));
+        this.db.addParking_Data(new Parking_Data(2,new LatLng(40.635650,  22.935431),"Free Parking"));
+        this.db.addParking_Data(new Parking_Data(3,new LatLng(40.630440,  22.942912),"Free Parking"));
+        this.db.addParking_Data(new Parking_Data(4,new LatLng(40.632804,  22.941331),"Free Parking"));
+        this.db.addParking_Data(new Parking_Data(5,new LatLng(40.632511,  22.947489),"Free Parking"));
 
-        this.db.addCulture_Data(new Culture_Data(3,new LatLng(1,10),"lalala","lalalal",Culture_Data.Type.CINEMA));
-        this.db.addCulture_Data(new Culture_Data(4,new LatLng(1,10),"lalala","lalalal",Culture_Data.Type.CINEMA));
-        this.db.addCulture_Data(new Culture_Data(5,new LatLng(1,10),"lalala","lalalal",Culture_Data.Type.CINEMA));
+        this.db.addGasStation_Data(new GasStation_Data(1,new LatLng(40.641142,  22.934721),"Gaass"));
+        this.db.addGasStation_Data(new GasStation_Data(2,new LatLng(40.635650,  22.935431),"Expensive Gas"));
+        this.db.addGasStation_Data(new GasStation_Data(3,new LatLng(40.630440,  22.942912),"Too much expensive gas"));
+        this.db.addGasStation_Data(new GasStation_Data(4,new LatLng(40.632804,  22.941331),"whyy!?"));
+        this.db.addGasStation_Data(new GasStation_Data(5,new LatLng(40.632511,  22.947489),"So expensive"));
+
+        Calendar_Data cd=new Calendar_Data();
+        cd.setYear(2014);
+        cd.setMonth(11);
+        cd.setDayOfMonth(30);
+        cd.setStartTime(6,0);
+        cd.setEndTime(19,00);
+        cd.setLabel("HackThess!");
+        cd.setDescription("Apps for Thessaloniki");
+        cd.setPoint(new LatLng(40.621126, 22.955502));
+
+        this.db.addCalendar_Data(cd);
+
+        cd=new Calendar_Data();
+        cd.setYear(2014);
+        cd.setMonth(12);
+        cd.setDayOfMonth(25);
+        cd.setStartTime(0,0);
+        cd.setEndTime(23,59);
+        cd.setLabel("ChristMas!!");
+        cd.setDescription("Oh Christmas!");
+        cd.setLink("Its christmas time!");
+        cd.setPoint(new LatLng(40.621126, 22.955502));
+
+        this.db.addCalendar_Data(cd);
+
+        cd=new Calendar_Data();
+        cd.setYear(2015);
+        cd.setMonth(1);
+        cd.setDayOfMonth(1);
+        cd.setStartTime(0,0);
+        cd.setEndTime(23,59);
+        cd.setLabel("First Day of the year!");
+        cd.setDescription("2015!!!!");
+        cd.setLink("Happy new Year!");
+        cd.setPoint(new LatLng(40.621126, 22.955502));
+
+        this.db.addCalendar_Data(cd);
+
+
+
+
+        this.db.addCulture_Data(new Culture_Data(1,new LatLng(40.633257, 22.944343),"Odeon","A cinema at the heart of the city",Culture_Data.Type.CINEMA));
+
+        this.db.addCulture_Data(new Culture_Data(2,new LatLng(40.630440,  22.942912),"Village","A cinema at Thessaloniki's Port ",Culture_Data.Type.CINEMA));
+
+        this.db.addCulture_Data(new Culture_Data(3,new LatLng(40.632511,  22.947489),"Aristotelion","A very Famous Theater",Culture_Data.Type.THEATER));
+        this.db.addCulture_Data(new Culture_Data(4,new LatLng(40.632511,  22.947489),"Aneton","Another Famous  Theater",Culture_Data.Type.THEATER));
+        this.db.addCulture_Data(new Culture_Data(5,new LatLng(40.635650,  22.935431), "Archeologicaal Museum","A pretty boring place \n (not even sorry)",Culture_Data.Type.MUSEUM));
+
+
 
     }
 
@@ -166,7 +233,7 @@ final class DbAdapter {
 
         for(int i=0; i<this.getcultura().size();i++){
             Culture_Data cd=(Culture_Data) this.getcultura().get(i);
-            if(cd.getType()==type){
+            if(cd.getType().code()==type.code()){
                 bds.add(cd);
             }
         }

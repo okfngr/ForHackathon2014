@@ -59,14 +59,17 @@ public class Culture_Data extends BasicData {
         this.type = type;
     }
 
-    public void setType(String type) {
-        for(Type value:Type.values()){
-            if(value.toString().equals(type)){
-                this.type = value;
-            }
+    public void setType(String str) {
+        if(str.equals("CINEMA")) {
+            this.setType(Type.CINEMA);
+        return;}
 
-        }
-        this.type=Type.CINEMA;
+        if(str.equals("THEATER")) {this.setType(Type.THEATER);return;}
+        if(str.equals("MUSEUM")){ this.setType(Type.MUSEUM);return;}
+        this.setType(Type.ETC);
+
+
+
     }
 
     public int getTypeToId() {

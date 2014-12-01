@@ -2,13 +2,11 @@ package gr.kccode.hachathon.forhackathon2014;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -23,9 +21,9 @@ import java.util.ArrayList;
 
 public class MapsActivity extends FragmentActivity implements LocationListener {
 
+    ArrayList<BasicData> data;
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private int id_option = 0;
-    ArrayList<BasicData> data;
     private int colour;
     private LocationManager lm;
 
@@ -36,8 +34,8 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
         setContentView(R.layout.activity_maps);
         overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 
-        Intent intent=getIntent();
-        id_option=intent.getIntExtra("id_option", 0);
+        Intent intent = getIntent();
+        id_option = intent.getIntExtra("id_option", 0);
 
 
         if (id_option == 0) {
@@ -49,7 +47,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
         }
 
         setUpMapIfNeeded();
-        if(mMap!=null){
+        if (mMap != null) {
             mMap.setMyLocationEnabled(true);
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(40.633257, 22.944343), 10));
         }
@@ -71,17 +69,15 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
             mMap.addMarker(new MarkerOptions()
                     .position(data.get(i).getPoint())
                     .title(data.get(i).getLabel())
-                    .icon(BitmapDescriptorFactory.fromResource(colour)));
+                    .icon(BitmapDescriptorFactory.defaultMarker((float) 16.5)));
         }
 
-        if(id_option==0) {
-            Toast.makeText(getApplicationContext(),  getResources().getString(R.string.closer_wifi) , Toast.LENGTH_LONG).show();
-        }
-        else if(id_option==1){
-            Toast.makeText(getApplicationContext(),  getResources().getString(R.string.closer_parking) , Toast.LENGTH_LONG).show();
-        }
-        else if(id_option==2){
-            Toast.makeText(getApplicationContext(),  getResources().getString(R.string.closer_gas_station) , Toast.LENGTH_LONG).show();
+        if (id_option == 0) {
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.closer_wifi), Toast.LENGTH_LONG).show();
+        } else if (id_option == 1) {
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.closer_parking), Toast.LENGTH_LONG).show();
+        } else if (id_option == 2) {
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.closer_gas_station), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -130,15 +126,15 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
     }
 
     public void setColour(int id_option) {
-        if(id_option==0) colour=this.getResources().getColor(R.color.wifi);
-        else if(id_option==1) colour=this.getResources().getColor(R.color.parking);
-        else if(id_option==2) colour=this.getResources().getColor(R.color.gas);
+        if (id_option == 0) colour = this.getResources().getColor(R.color.wifi);
+        else if (id_option == 1) colour = this.getResources().getColor(R.color.parking);
+        else if (id_option == 2) colour = this.getResources().getColor(R.color.gas);
     }
 
     @Override
     public void onLocationChanged(Location location) {
 
-        
+
     }
 
     @Override

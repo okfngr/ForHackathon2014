@@ -18,10 +18,19 @@ public class Calendar_Data extends BasicData {
     private String link;
 
     public Calendar_Data(int year, int month, int dayOfMonth,int sth,int stm,int endh,int endm, String description, String link){
-
+    this.setYear(year);
+        this.setMonth(month);
+        this.setDayOfMonth(dayOfMonth);
+        this.setSth(sth);
+        this.setStm(stm);
+        this.setEndh(endh);
+        this.setEndm(endm);
+        this.setDescription(description);
+        this.setLink(link);
     }
 
     public Calendar_Data() {
+
 
     }
 
@@ -30,7 +39,7 @@ public class Calendar_Data extends BasicData {
     }
 
     public void setYear(int year) {
-        if(year<2000) year=2000;
+
         this.year = year;
     }
 
@@ -39,7 +48,7 @@ public class Calendar_Data extends BasicData {
     }
 
     public void setMonth(int month) {
-        if(month<=0||month>12) month=1;
+
         this.month = month;
     }
 
@@ -48,7 +57,7 @@ public class Calendar_Data extends BasicData {
     }
 
     public void setDayOfMonth(int dayOfMonth) {
-        if(dayOfMonth<=0||dayOfMonth>31) dayOfMonth=1;
+
         this.dayOfMonth = dayOfMonth;
     }
 
@@ -57,7 +66,7 @@ public class Calendar_Data extends BasicData {
     }
 
     public void setSth(int sth) {
-        if(sth<0||sth>=24) sth=0;
+
         this.sth = sth;
     }
 
@@ -66,7 +75,7 @@ public class Calendar_Data extends BasicData {
     }
 
     public void setStm(int stm) {
-        if(stm<0||stm>=60) sth=0;
+
         this.stm = stm;
     }
 
@@ -75,7 +84,7 @@ public class Calendar_Data extends BasicData {
     }
 
     public void setEndh(int endh) {
-        if(endh<0||endh>=24) endm=0;
+
         this.endh = endh;
     }
 
@@ -84,7 +93,7 @@ public class Calendar_Data extends BasicData {
     }
 
     public void setEndm(int endm) {
-        if(endm<0||endm>=60) endm=0;
+
         this.endm = endm;
     }
 
@@ -121,4 +130,11 @@ public class Calendar_Data extends BasicData {
             return false;
 
     }
+
+    public void setEndTime(int i, int i1) {
+        this.setEndm(i1);
+        this.setEndh(i);
+    }
+
 }
+

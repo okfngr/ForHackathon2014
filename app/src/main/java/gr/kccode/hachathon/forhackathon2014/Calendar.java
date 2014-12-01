@@ -31,10 +31,10 @@ public class Calendar extends Activity {
 
             @Override
             public void onSelectedDayChange(CalendarView view,int year, int month, int dayOfMonth) {
-
+                month+=1;
                 events=DbAdapter.getInstance().getExistEvents(dayOfMonth, month, year);
                 if (events.isEmpty()){
-                    Toast.makeText(getApplicationContext(),  getResources().getString(R.string.no_events) , Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),  ""+year+" "+month+" "+dayOfMonth , Toast.LENGTH_LONG).show();
                 }
                 else {
                     Intent intent = new Intent(Calendar.this, EventsOfDay.class);
