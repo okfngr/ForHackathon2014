@@ -172,8 +172,9 @@ final class DbAdapter {
         cd.setDayOfMonth(30);
         cd.setStartTime(6,0);
         cd.setEndTime(19,00);
-        cd.setLabel("HackThess!");
+        cd.setLabel("HackaThess!");
         cd.setDescription("Apps for Thessaloniki");
+        cd.setLink("NOW!");
         cd.setPoint(new LatLng(40.621126, 22.955502));
 
         this.db.addCalendar_Data(cd);
@@ -213,7 +214,7 @@ final class DbAdapter {
 
         this.db.addCulture_Data(new Culture_Data(3,new LatLng(40.632511,  22.947489),"Aristotelion","A very Famous Theater",Culture_Data.Type.THEATER));
         this.db.addCulture_Data(new Culture_Data(4,new LatLng(40.632511,  22.947489),"Aneton","Another Famous  Theater",Culture_Data.Type.THEATER));
-        this.db.addCulture_Data(new Culture_Data(5,new LatLng(40.635650,  22.935431), "Archeologicaal Museum","A pretty boring place \n (not even sorry)",Culture_Data.Type.MUSEUM));
+        this.db.addCulture_Data(new Culture_Data(5,new LatLng(40.635650,  22.935431), "Archeologicaal Museum","A museum",Culture_Data.Type.MUSEUM));
 
 
 
